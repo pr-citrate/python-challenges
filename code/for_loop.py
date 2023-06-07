@@ -17,9 +17,9 @@ def left_down_triangle(n: int) -> str:
       str: A string of stars.
 
     Examples:
-        >>> left_down_triangle(1) == \
-        "*"
-        True
+    >>> left_down_triangle(1) == \
+    "*"
+    True
 
 
     """
