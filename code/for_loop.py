@@ -93,9 +93,9 @@ def square(n: int) -> str:
     return result
 
 
-def square_with_border(n: int) -> str:
+def square_border(n: int) -> str:
     """
-    Returns a square of stars with a length of `n` and a border of stars.
+    Returns a border of square of stars with a length of `n`.
 
     Args:
       n (int): The length of the square.
