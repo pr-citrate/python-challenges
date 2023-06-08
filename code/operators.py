@@ -6,6 +6,59 @@ Practice of python operators.
 import doctest
 
 
+def divmod_1(n: int, m: int):
+    """_summary_
+
+    Args:
+        n (int): _description_
+        m (int): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    return (
+        n // m,
+        n % m,
+    )
+
+
+def power_1(n: int):
+    """_summary_
+
+    Args:
+        n (int): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    return n**2
+
+
+def power_2(n: int):
+    """_summary_
+
+    Args:
+        n (int): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    return n**0.5
+
+
+def power_3(n: int, m: int):
+    """_summary_
+
+    Args:
+        n (int): _description_
+        m (int): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    return n**m
+
+
 def ternary_1(n: int) -> str:
     """"Returns a string based on whether the input number is even or odd.
 
