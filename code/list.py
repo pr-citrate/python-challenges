@@ -49,11 +49,11 @@ def delete_1(arr: List[Any], a: Any) -> List[Any]:
     return arr
 
 
-def delete_2(arr: List[Any], n: int) -> Tuple[List[Any], int]:
+def delete_2(arr: List[Any], n: int) -> List[Any]:
+    del arr[n]
+    return arr
+
+
+def delete_3(arr: List[Any], n: int) -> Tuple[List[Any], int]:
     t = arr.pop(n)
     return arr, t
-
-
-def delete_3(arr: List[Any], n: int) -> List[Any]:
-    arr.pop(n)
-    return arr
