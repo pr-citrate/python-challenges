@@ -4,9 +4,10 @@
 Practice of for loop syntax.
 """
 import doctest
+from typing import List
 
 
-def left_down_triangle(n: int) -> str:
+def left_down_triangle(n: int) -> List[str]:
     """
     Returns a left-down triangle of stars with a length of `n`.
 
@@ -17,19 +18,18 @@ def left_down_triangle(n: int) -> str:
       str: A string of stars.
 
     Examples:
-    >>> left_down_triangle(1) == \
-    "*"
-    True
+    >>> left_down_triangle(1)
+    ['*']
 
 
     """
-    result = ""
+    result = []
     for i in range(1, n + 1):
-        result += "*" * i
+        result += ["*" * i]
     return result
 
 
-def right_down_triangle(n: int) -> str:
+def right_down_triangle(n: int) -> List[str]:
     """
     Returns a right-down triangle of stars with a length of `n`.
 
@@ -39,13 +39,13 @@ def right_down_triangle(n: int) -> str:
     Returns:
       str: A string of stars.
     """
-    result = ""
+    result = []
     for i in range(1, n + 1):
-        result += " " * (n - i) + "*" * i
+        result += [" " * (n - i) + "*" * i]
     return result
 
 
-def left_up_triangle(n: int) -> str:
+def left_up_triangle(n: int) -> List[str]:
     """
     Returns a left-up triangle of stars with a length of `n`.
 
@@ -55,13 +55,13 @@ def left_up_triangle(n: int) -> str:
     Returns:
       str: A string of stars.
     """
-    result = ""
+    result = []
     for i in range(n, 0, -1):
-        result += "*" * i + " " * (n - i)
+        result += ["*" * i + " " * (n - i)]
     return result
 
 
-def right_up_triangle(n: int) -> str:
+def right_up_triangle(n: int) -> List[str]:
     """
     Returns a right-up triangle of stars with a length of `n`.
 
@@ -71,13 +71,13 @@ def right_up_triangle(n: int) -> str:
     Returns:
       str: A string of stars.
     """
-    result = ""
+    result = []
     for i in range(n, 0, -1):
-        result += " " * (n - i) + "*" * i
+        result += [" " * (n - i) + "*" * i]
     return result
 
 
-def square(n: int) -> str:
+def square(n: int) -> List[str]:
     """
     Returns a square of stars with a length of `n`.
 
@@ -87,9 +87,9 @@ def square(n: int) -> str:
     Returns:
       str: A string of stars.
     """
-    result = ""
+    result = []
     for _ in range(n):
-        result += "*" * n
+        result += ["*" * n]
     return result
 
 
@@ -113,7 +113,7 @@ def square_border(n: int) -> str:
         return result
 
 
-def isosceles_triangle(n: int) -> str:
+def isosceles_triangle(n: int) -> List[str]:
     """
     Returns an isosceles triangle of stars with a height of `n`.
 
@@ -123,12 +123,11 @@ def isosceles_triangle(n: int) -> str:
     Returns:
       str: A string of stars.
     """
-    result = ""
+    result = []
     for i in range(1, n + 1):
-        result += " " * (n - i) + "*" * (i * 2 - 1)
+        result += [" " * (n - i) + "*" * (i * 2 - 1) + " " * (n - i)]
     return result
 
 
 if __name__ == "__main__":
     doctest.testmod()
-    print(left_down_triangle(5))

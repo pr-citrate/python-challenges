@@ -4,113 +4,203 @@
 Practice of python operators.
 """
 import doctest
+from typing import List, Tuple, Any
 
 
-def divmod_1(n: int, m: int):
-    """_summary_
+def arithmetic(a: float, b: float) -> Tuple[float, float, float, float]:
+    """사칙연산을 하여 반환하는 함수를 작성한다.
 
     Args:
-        n (int): _description_
-        m (int): _description_
+        a (float): 첫쨰 피연산자, 실수
+        b (float): 둘째 피연산자, 0이 아닌 실수
 
     Returns:
-        _type_: _description_
+        Tuple[float, float, float, float]: 각각 a와 b의 합, 차, 곱, 몫이다
     """
-    return (
-        n // m,
-        n % m,
-    )
+    assert b != 0
+    return a + b, a - b, a * b, a / b
 
 
-def power_1(n: int):
-    """_summary_
+def divmod_1(n: int, m: int) -> Tuple[int, int]:
+    """n을 m으로 나눈 몫과 나머지를 반환하는 함수를 몫 연산자와 나머지 연산자를 이용하여 작성한다.
 
     Args:
-        n (int): _description_
+        n (int): 자연수
+        m (int): 자연수
 
     Returns:
-        _type_: _description_
+        Tuple[int, int]: n을 m으로 나눈 몫, n을 m으로 나눈 나머지
+
+    Examples:
+    >>> divmod_1(7, 3)
+    (2, 1)
+
+    >>> divmod_1(2, 5)
+    (0, 2)
+
+    >>> divmod_1(10, 2)
+    (5, 0)
+    """
+
+    return n // m, n % m
+
+
+def power_1(n: int) -> int:
+    """n의 제곱을 반횐하는 함수를 거듭제곱 연산자를 이용하여 작성한다
+
+    Args:
+        n (int): 양의 실수
+
+    Returns:
+        int: n의 제곱
+
+    Examples:
+    >>> power_1(0)
+    0
+
+    >>> power_1(1)
+    1
+
+    >>> power_1(3)
+    9
+
+    >>> power_1(111)
+    12321
+
     """
     return n**2
 
 
-def power_2(n: int):
-    """_summary_
+def power_2(n: int) -> float:
+    """제곱근 n을 반환하는 함수를 거듭제곱 연산자를 이용하여 작성한다.
 
     Args:
-        n (int): _description_
+        n (int): 자연수
 
     Returns:
-        _type_: _description_
+        float: 제곱근 n
+
+    Examples:
+    >>> power_2(0)
+    0.0
+
+    >>> power_2(1)
+    1.0
+
+    >>> power_2(4)
+    2.0
+
+    >>> power_2(10)
+    3.1622776601683795
     """
     return n**0.5
 
 
-def power_3(n: int, m: int):
-    """_summary_
+def power_3(n: float) -> float:
+    """n의 역수를 반환하는 함수를 거듭제곱 연산자를 이용하여 작성한다.
 
     Args:
-        n (int): _description_
-        m (int): _description_
+        n (float): 양의 실수
 
     Returns:
-        _type_: _description_
+        float: n의 역수
+
+    Examples:
+    >>> power_3(1)
+    1.0
+
+    >>> power_3(10)
+    0.1
+
+    >>> power_3(0.2)
+    5.0
+
+    >>> power_3(7)
+    0.14285714285714285
+
+    >>> power_3(0.723)
+    1.3831258644536653
+
     """
+    return n**-1
+
+
+def power_4(n: float, m: float) -> float:
+    """n의 m제곱을 반환하는 함수를 거듭제곱 연산자를 이용하여 작성한다. 단, n이 0이하라면 m은 양수여야 한다.
+
+    Args:
+        n (float): 실수
+        m (float): 실수
+
+    Returns:
+        float: n의 m제곱
+
+    Examples:
+    >>> power_4(3, 2)
+    9
+
+    >>> power_4(5, 1)
+    5
+
+    >>> power_4(3, -0.5)
+    0.5773502691896257
+
+    >>> power_4(7, 0.3)
+    1.792789962520997
+
+    >>> power_4(2, -3)
+    0.125
+    """
+    assert m > 0 if n <= 0 else True
     return n**m
 
 
 def ternary_1(n: int) -> str:
-    """"Returns a string based on whether the input number is even or odd.
+    """n이 홀수이면 buzz, 짝수이면 fizz를 반환하는 함수를 삼항 연산자를 이용하여 작성한다.
 
     Args:
-        n (int): The number to check.
+        n (int): 자연수
 
     Returns:
-        str: "fizz" if n is even, "buzz" if n is odd.
-        
+        str: "fizz" 또는 "buzz"
+
     Examples:
-    >>> ternary_1(1) == \
-        "buzz"
-    True
-    
-    >>> ternary_1(4) == \
-        "fizz"
-    True
-    
-    >>> ternary_1(5) == \
-        "buzz"
-    True
+    >>> ternary_1(1)
+    'buzz'
+
+    >>> ternary_1(4)
+    'fizz'
+
+    >>> ternary_1(5)
+    'buzz'
     """
     return "fizz" if n % 2 == 0 else "buzz"
 
 
-def ternary_2(n: int) -> str:
-    """Return a string of the numbers from 1 to n, with even numbers replaced by 0.
+def ternary_2(n: int) -> List[Any]:
+    """홀수가 0으로 대체된 1부터 n까지의 숫자로 된 리스트를 반환하는 함수를 작성한다
 
     Args:
-        n (int): The upper limit of the range.
+        n (int): 자연수
 
     Returns:
-        str: A string of the numbers from 1 to n, with even numbers replaced by 0.
-        
+        str: 홀수가 으로 대체된 1부터 n까지의 리스트
+
     Examples:
-    >>> ternary_2(1) == \
-        "0"
-    True
-    
-    >>> ternary_2(2) == \
-        "0\\n2"
-    True
-    
-    >>> ternary_2(5) == \
-        "0\\n2\\n0\\n4\\n0"
-    True
+    >>> ternary_2(1)
+    [0]
+
+    >>> ternary_2(2)
+    [0, 2]
+
+    >>> ternary_2(5)
+    [0, 2, 0, 4, 0]
     """
     result = []
     for i in range(1, n + 1):
-        result.append(str(i if i % 2 == 0 else 0))
+        result += [i if i % 2 == 0 else 0]
 
-    return "\n".join(result)
+    return result
 
 
 if __name__ == "__main__":
