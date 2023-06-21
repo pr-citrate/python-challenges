@@ -274,7 +274,29 @@ def delete_2(arr: List[Any], n: int) -> List[Any]:
 
 
 def delete_3(arr: List[Any], n: int) -> Tuple[List[Any], int]:
-    t = arr.pop(n)
+    """리스트에서 n번쨰 항목을 del 키워드를 이용해 삭제한다.
+
+    Args:
+        arr (List[Any]): 리스트
+        n (int): 삭제할 순서
+
+    Returns:
+        Tuple[List[Any], int]: 삭제된 리스트
+
+    Examples:
+    >>> delete_3([1, 2, 3, 4, 5], 3)
+    ([1, 2, 4, 5], 3)
+
+    >>> delete_3(['a', 'b', 'c'], 3)
+    (['a', 'b'], 'c')
+
+    >>> delete_3(['python', 'js', 'swift', 'dart'], 3)
+    (['python', 'js', 'dart'], 'swift')
+
+    >>> delete_3([[1], [2], [1]], 1)
+    ([[2], [1]], [1])
+    """
+    t = arr.pop(n - 1)
     return arr, t
 
 
