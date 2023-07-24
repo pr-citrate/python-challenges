@@ -274,14 +274,14 @@ def delete_2(arr: List[Any], n: int) -> List[Any]:
 
 
 def delete_3(arr: List[Any], n: int) -> Tuple[List[Any], int]:
-    """리스트에서 n번쨰 항목을 del 키워드를 이용해 삭제한다.
+    """리스트에서 n번쨰 항목을 pop를 이용해 삭제하고, 그 리스트와 삭제된 항목을 반환한다
 
     Args:
         arr (List[Any]): 리스트
         n (int): 삭제할 순서
 
     Returns:
-        Tuple[List[Any], int]: 삭제된 리스트
+        Tuple[List[Any], int]: 삭제된 리스트, 삭제된 항목
 
     Examples:
     >>> delete_3([1, 2, 3, 4, 5], 3)

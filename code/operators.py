@@ -7,18 +7,26 @@ import doctest
 from typing import List, Tuple, Any
 
 
-def arithmetic(a: float, b: float) -> Tuple[float, float, float, float]:
+def arithmetic(a: float, b: float):
     """사칙연산을 하여 반환하는 함수를 작성한다.
 
     Args:
         a (float): 첫쨰 피연산자, 실수
         b (float): 둘째 피연산자, 0이 아닌 실수
 
-    Returns:
-        Tuple[float, float, float, float]: 각각 a와 b의 합, 차, 곱, 몫이다
+    Examples:
+    >>> arithmetic(2, 5)
+    7 -3 10 0.4
+
+    >>> arithmetic(10, 3)
+    13 7 30 3.3333333333333335
+
+    >>> arithmetic(6, 2)
+    8 4 12 3.0
+
     """
     assert b != 0
-    return a + b, a - b, a * b, a / b
+    print(a + b, a - b, a * b, a / b)
 
 
 def divmod_1(n: int, m: int) -> Tuple[int, int]:
